@@ -1,0 +1,30 @@
+﻿<Window x:Class="TestBee.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TestBee" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="514" Width="371" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid>
+        <Button Content="Start command sending" Height="27" Margin="12,108,0,0" Name="button1" VerticalAlignment="Top" Click="button1_Click" HorizontalAlignment="Left" Width="177" />
+        <ComboBox Height="24" HorizontalAlignment="Left" Margin="12,12,0,0" Name="comboBox_ip" VerticalAlignment="Top" Width="120" ItemsSource="{Binding}">
+            <ComboBoxItem Content="127.0.0.1" IsSelected="True" />
+        </ComboBox>
+        <TextBox Height="24" HorizontalAlignment="Left" Margin="138,12,0,0" Name="textBox_port" VerticalAlignment="Top" Width="51" Text="8888" />
+        <Separator Height="15" Margin="12,141,12,0" Name="separator1" VerticalAlignment="Top" />
+        <CheckBox Content="Hand signal" Height="16" HorizontalAlignment="Left" Margin="12,42,0,0" Name="checkBox_hand" VerticalAlignment="Top" Checked="checkBox_hand_Changed" Unchecked="checkBox_hand_Changed" />
+        <CheckBox Content="Laser signal" Height="16" HorizontalAlignment="Left" Margin="12,64,0,0" Name="checkBox_laser" VerticalAlignment="Top" IsChecked="True" Unchecked="checkBox_laser_Changed" Checked="checkBox_laser_Changed" />
+        <CheckBox Content="LMB signal" Height="16" HorizontalAlignment="Left" Margin="12,86,0,0" Name="checkBox_lmb" VerticalAlignment="Top" IsChecked="True" Checked="checkBox_lmb_Changed" Unchecked="checkBox_lmb_Changed" />
+        <TextBox Height="19" HorizontalAlignment="Left" Margin="104,39,0,0" Name="textBox_hand" VerticalAlignment="Top" Width="61" Text="10" TextChanged="textBox_hand_TextChanged" />
+        <TextBox HorizontalAlignment="Left" Margin="104,61,0,0" Name="textBox_laser" Width="61" Text="10" TextChanged="textBox_laser_TextChanged" Height="19" VerticalAlignment="Top" />
+        <TextBox Height="19" HorizontalAlignment="Left" Margin="104,83,0,0" Name="textBox_lmb" VerticalAlignment="Top" Width="61" Text="10" TextChanged="textBox_lmb_TextChanged" />
+        <Label Content="ms" Height="28" HorizontalAlignment="Left" Margin="162,37,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="ms" Height="28" HorizontalAlignment="Left" Margin="162,59,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label Content="ms" Height="28" HorizontalAlignment="Left" Margin="162,81,0,0" Name="label3" VerticalAlignment="Top" />
+        <Canvas Margin="12,162,12,12" Name="canvas1" DataContext="{Binding}" MouseLeave="canvas1_MouseLeave" MouseMove="canvas1_MouseMove" SizeChanged="canvas1_SizeChanged" MouseLeftButtonDown="canvas1_MouseLeftButtonDown" MouseLeftButtonUp="canvas1_MouseLeftButtonUp">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#7FE7F298" Offset="0" />
+                    <GradientStop Color="#5846FFFF" Offset="1" />
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+    </Grid>
+</Window>
